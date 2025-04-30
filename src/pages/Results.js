@@ -143,10 +143,24 @@ const SeasonDescription = styled.p`
   font-family: ${props => props.theme.fonts.secondary};
   font-size: 1.1rem;
   color: ${props => props.theme.colors.text};
-  margin: 20px 0;
+  margin: 20px 0 10px 0;
   line-height: 1.6;
   max-width: 600px;
   text-align: center;
+`;
+
+const ColorExplanation = styled.div`
+  font-family: ${props => props.theme.fonts.secondary};
+  font-size: 1rem;
+  color: ${props => props.theme.colors.text};
+  margin: 0 0 20px 0;
+  padding: 10px 15px;
+  line-height: 1.5;
+  max-width: 600px;
+  text-align: center;
+  background-color: ${props => props.theme.colors.lightGold};
+  border-radius: 8px;
+  font-style: italic;
 `;
 
 const ControlsContainer = styled.div`
@@ -404,7 +418,7 @@ const Results = () => {
     );
   }
 
-  const { season, palette } = results;
+  const { season, palette, explanation, colorExplanation } = results;
 
   // Set the first color as the default selected color if none is selected
   useEffect(() => {
@@ -682,8 +696,14 @@ const Results = () => {
         <Title>Your Seasonal Palette: {season}</Title>
 
         <SeasonDescription>
-          {getSeasonDescription(season)}
+          {explanation || getSeasonDescription(season)}
         </SeasonDescription>
+
+        {colorExplanation && (
+          <ColorExplanation>
+            <strong>Why these colors?</strong> {colorExplanation}
+          </ColorExplanation>
+        )}
 
         {!showSplitScreen ? (
           // Single photo view
