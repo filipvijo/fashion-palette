@@ -21,23 +21,29 @@ const ShopContainer = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(255, 228, 225, 0.3), rgba(255, 215, 0, 0.2));
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
     z-index: 0;
   }
 `;
 
 const ShopBox = styled(motion.div)`
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.98);
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
   text-align: center;
-  max-width: 800px;
+  max-width: 900px;
   width: 100%;
   border: 2px solid transparent;
   border-image: linear-gradient(135deg, #FFD700, #FF6F61) 1;
   position: relative;
   z-index: 1;
+  backdrop-filter: blur(10px);
+
+  @media (max-width: 768px) {
+    padding: 25px;
+    width: 95%;
+  }
 `;
 
 const PhotoContainer = styled(motion.div)`
@@ -58,6 +64,31 @@ const UserPhoto = styled.img`
 const ShoppingSection = styled.div`
   margin-top: 40px;
   text-align: center;
+  padding: 20px;
+  background-color: rgba(248, 245, 241, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(201, 168, 125, 0.2);
+`;
+
+const CategoryHeading = styled.h3`
+  color: #1A3C34;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  position: relative;
+  display: inline-block;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #FFD700, #FF6F61);
+  }
 `;
 
 const ShoppingCards = styled.div`
@@ -73,33 +104,82 @@ const ShoppingCard = styled(motion.a)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 200px;
-  height: 150px;
-  background: linear-gradient(135deg, #fff, #f5f5f5);
+  width: 220px;
+  height: 160px;
+  background: linear-gradient(135deg, #fff, #f8f8f8);
   border-radius: 15px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   color: #1A3C34;
   font-family: 'Poppins', sans-serif;
   font-size: 1.1rem;
   font-weight: 500;
   border: 2px solid #FFD700;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 10px;
+  transition: all 0.3s ease;
+  padding: 15px;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+    transition: left 0.5s ease;
+  }
+
   &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+
+    &:before {
+      left: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 180px;
+    height: 140px;
+    padding: 10px;
   }
 `;
 
 const StoreName = styled.span`
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #1A3C34, #2A5C54);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 `;
 
 const ItemName = styled.span`
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #FF6F61;
   margin-top: 5px;
+  font-weight: 500;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #FFD700, #FF6F61);
+    transition: width 0.3s ease;
+  }
+
+  ${ShoppingCard}:hover &:after {
+    width: 80%;
+  }
 `;
 
 const StyledButton = styled(motion.button)`
@@ -156,32 +236,51 @@ const ColorReference = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px 0;
+  margin: 25px 0;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(201, 168, 125, 0.3);
 `;
 
 const ColorBar = styled.div`
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background-color: ${(props) => props.color};
-  border: 2px solid #FFD700;
-  border-radius: 8px;
-  margin-right: 10px;
+  border: 3px solid #FFD700;
+  border-radius: 12px;
+  margin-right: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 const ColorLabel = styled.span`
   color: #1A3C34;
   font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 `;
 
 const Shop = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { selectedColor, photo } = location.state || {};
+  const { selectedColor, photo, season, palette } = location.state || {};
 
-  if (!selectedColor) {
-    return <ShopContainer><Title>No color selected.</Title></ShopContainer>;
+  if (!selectedColor || !palette) {
+    return (
+      <ShopContainer>
+        <Title>No color or palette selected.</Title>
+        <StyledButton onClick={() => navigate('/upload')}>
+          Try Again
+        </StyledButton>
+      </ShopContainer>
+    );
   }
 
   // Placeholder for gender - replace with actual user data later
@@ -190,9 +289,9 @@ const Shop = () => {
   // Define shopping links based on gender
   const shoppingLinks = gender === 'male' ? [
     {
-      store: 'Amazon',
+      store: 'Ballary',
       item: 'Shirt',
-      url: `https://www.amazon.com/s?k=men+shirt+${selectedColor.replace('#', '')}`,
+      url: `https://ballary.rs/sr/search?q=muška+košulja`,
     },
     {
       store: 'Zara',
@@ -221,9 +320,9 @@ const Shop = () => {
     },
   ] : [
     {
-      store: 'Amazon',
+      store: 'Ballary',
       item: 'Dress',
-      url: `https://www.amazon.com/s?k=women+dress+${selectedColor.replace('#', '')}`,
+      url: `https://ballary.rs/sr/search?q=haljina`,
     },
     {
       store: 'Zara',
@@ -288,9 +387,9 @@ const Shop = () => {
           Explore clothing options in your selected color!
         </Subtitle>
         <ShoppingSection>
-          <h3 style={{ color: '#1A3C34', fontFamily: 'Playfair Display', fontSize: '1.8rem' }}>
-            Shop Now
-          </h3>
+          <CategoryHeading>
+            Shop Your Colors
+          </CategoryHeading>
           <ShoppingCards>
             {shoppingLinks.map((link, index) => (
               <ShoppingCard
@@ -298,9 +397,10 @@ const Shop = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.8 + index * 0.2, ease: 'easeOut' }}
+                initial={{ opacity: 0, y: 30, scale: 0.8 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.8 + index * 0.1, ease: 'easeOut' }}
+                whileHover={{ y: -10, scale: 1.05, boxShadow: "0 15px 30px rgba(0, 0, 0, 0.2)" }}
               >
                 <StoreName>{link.store}</StoreName>
                 <ItemName>{link.item}</ItemName>
@@ -308,16 +408,29 @@ const Shop = () => {
             ))}
           </ShoppingCards>
         </ShoppingSection>
-        <StyledButton
-          onClick={() => navigate('/results', { state: { analysisResult: location.state?.analysisResult, photo } })}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Back to Results
-        </StyledButton>
+        <div style={{ marginTop: '30px', display: 'flex', justifyContent: 'center', gap: '20px' }}>
+          <StyledButton
+            onClick={() => navigate('/results', { state: { results: { season, palette }, photo } })}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
+            whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.3)" }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Back to Results
+          </StyledButton>
+          <StyledButton
+            onClick={() => window.open('https://ballary.rs/sr', '_blank')}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.3 }}
+            whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.3)" }}
+            whileTap={{ scale: 0.95 }}
+            style={{ background: 'linear-gradient(135deg, #1A3C34, #2A5C54)', color: 'white' }}
+          >
+            Visit Ballary
+          </StyledButton>
+        </div>
       </ShopBox>
     </ShopContainer>
   );

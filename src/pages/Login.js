@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import loginBg from '../assets/login-bg.jpg';
+import LanguageSwitcher from '../components/LanguageSwitcher';
 
 const LoginContainer = styled.div`
   display: flex;
@@ -116,6 +118,7 @@ const StyledButton = styled(motion.button)`
 const Login = () => {
   const [gender, setGender] = useState('');
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -124,12 +127,13 @@ const Login = () => {
 
   return (
     <LoginContainer>
+      <LanguageSwitcher />
       <AppTitle
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
-        Fashion Palette
+        {t('app.name')}
       </AppTitle>
       <LoginForm
         onSubmit={handleSubmit}
@@ -137,6 +141,20 @@ const Login = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
       >
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          style={{
+            textAlign: 'center',
+            fontSize: '1.2rem',
+            color: '#1A3C34',
+            marginBottom: '10px',
+            fontFamily: 'Poppins, sans-serif'
+          }}
+        >
+          {t('login.subtitle')}
+        </motion.p>
         <StyledSelect value={gender} onChange={(e) => setGender(e.target.value)}>
           <option value="">Select Gender</option>
           <option value="man">Man</option>
@@ -147,10 +165,10 @@ const Login = () => {
         <StyledInput type="password" placeholder="Password" />
         <StyledButton
           type="submit"
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          Login
+          {t('login.getStarted')}
         </StyledButton>
       </LoginForm>
     </LoginContainer>

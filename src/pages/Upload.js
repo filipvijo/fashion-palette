@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { analyzePhoto } from '../services/colorAnalysis';
-import uploadBg from '../assets/upload-bg.jpg'; // Make sure this matches your background image path
+import uploadBg from '../assets/upload-bg.jpg';
 
 const UploadContainer = styled.div`
   display: flex;
@@ -16,6 +16,7 @@ const UploadContainer = styled.div`
   background-position: center;
   padding: 40px;
   position: relative;
+
   &:before {
     content: '';
     position: absolute;
@@ -23,63 +24,72 @@ const UploadContainer = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(255, 228, 225, 0.3), rgba(255, 215, 0, 0.2));
+    background: linear-gradient(135deg,
+      rgba(201, 168, 125, 0.2),
+      rgba(28, 28, 28, 0.8));
     z-index: 0;
   }
 `;
 
 const UploadBox = styled(motion.div)`
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.98);
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: ${props => props.theme.shadows.strong};
   text-align: center;
   position: relative;
   z-index: 1;
-  border: 2px solid transparent;
-  border-image: linear-gradient(135deg, #FFD700, #FF6F61) 1;
-  max-width: 400px;
+  max-width: 500px;
   width: 100%;
-  transform: translateX(-10%);
-  overflow: hidden;
+  backdrop-filter: blur(10px);
 `;
 
-const StyledInput = styled(motion.input)`
-  margin: 20px 0;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #FFD700;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
-  color: #1A3C34;
-  outline: none;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 245, 240, 0.9));
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-  &:focus {
-    border-color: #FF6F61;
-    box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
-    transform: scale(1.02);
-  }
-  &:hover {
-    transform: scale(1.02);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
-`;
-
-const StyledButton = styled(motion.button)`
-  padding: 12px 30px;
-  background: linear-gradient(135deg, #FFD700, #FF6F61);
-  color: #1A3C34;
-  border: none;
-  border-radius: 50px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
+const Title = styled.h1`
+  font-family: ${props => props.theme.fonts.primary};
+  font-size: 2.5rem;
+  color: ${props => props.theme.colors.primary};
+  margin-bottom: 1.5rem;
   font-weight: 600;
+  letter-spacing: -0.02em;
+`;
+
+const Subtitle = styled.p`
+  font-family: ${props => props.theme.fonts.secondary};
+  font-size: 1.1rem;
+  color: ${props => props.theme.colors.text};
+  margin-bottom: 2rem;
+  font-weight: 300;
+`;
+
+const UploadArea = styled(motion.div)`
+  border: 2px dashed ${props => props.theme.colors.secondary};
+  border-radius: 4px;
+  padding: 40px 20px;
+  margin: 20px 0;
   cursor: pointer;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: ${props => props.theme.transitions.default};
+  background: ${props => props.theme.colors.lightGold};
+
+  &:hover {
+    border-color: ${props => props.theme.colors.accent};
+    background: ${props => props.theme.colors.cream};
+  }
+`;
+
+const Button = styled(motion.button)`
+  background: ${props => props.theme.colors.primary};
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1rem;
+  font-family: ${props => props.theme.fonts.secondary};
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: ${props => props.theme.transitions.default};
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
   &:before {
     content: '';
     position: absolute;
@@ -87,76 +97,68 @@ const StyledButton = styled(motion.button)`
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s ease;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: ${props => props.theme.transitions.slow};
   }
-  &:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    &:before {
-      left: 100%;
-    }
+
+  &:hover:before {
+    left: 100%;
   }
+
   &:disabled {
-    background: #ccc;
+    opacity: 0.6;
     cursor: not-allowed;
   }
 `;
 
-const Title = styled(motion.h2)`
-  color: white; /* Now white as requested! */
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  margin-bottom: 20px;
-  font-family: 'Playfair Display', serif;
-`;
-
-const Subtitle = styled(motion.p)`
-  color: #1A3C34;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 300;
-  margin-bottom: 20px;
-  opacity: 0.9;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.5);
-`;
-
-const PhotoPreview = styled(motion.img)`
-  max-width: 200px;
+const PreviewImage = styled.img`
+  max-width: 100%;
+  max-height: 300px;
   margin: 20px 0;
-  border-radius: 10px;
-  border: 2px solid #FFD700;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-  &:hover {
-    transform: scale(1.05);
-  }
+  border-radius: 4px;
+  box-shadow: ${props => props.theme.shadows.soft};
+`;
+
+const LoadingSpinner = styled(motion.div)`
+  width: 40px;
+  height: 40px;
+  border: 3px solid ${props => props.theme.colors.lightGold};
+  border-top-color: ${props => props.theme.colors.secondary};
+  border-radius: 50%;
+  margin: 20px auto;
 `;
 
 const Upload = () => {
-  const [photo, setPhoto] = useState(null);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [preview, setPreview] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleFileChange = (e) => {
-    if (e.target.files[0]) {
-      setPhoto(e.target.files[0]);
+  const handleFileSelect = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setSelectedFile(file);
+      const reader = new FileReader();
+      reader.onloadend = () => setPreview(reader.result);
+      reader.readAsDataURL(file);
     }
   };
 
   const handleUpload = async () => {
-    if (!photo) {
-      alert('Please select a photo to upload.');
-      return;
-    }
+    if (!selectedFile) return;
 
     setLoading(true);
     try {
-      const result = await analyzePhoto(photo);
-      navigate('/results', { state: { analysisResult: result, photo } });
+      const result = await analyzePhoto(selectedFile);
+      navigate('/results', { state: { results: result, photo: selectedFile } });
     } catch (error) {
-      alert('Something went wrong. Please try again.');
+      console.error('Error analyzing photo:', error);
+      // Handle error appropriately
     } finally {
       setLoading(false);
     }
@@ -164,53 +166,52 @@ const Upload = () => {
 
   return (
     <UploadContainer>
-      <Title
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-      >
-        Upload Your Photo
-      </Title>
       <UploadBox
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
       >
-        <Subtitle
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.9 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          Please upload a front-facing photo with no makeup.
-        </Subtitle>
-        <StyledInput
+        <Title>Discover Your Colors</Title>
+        <Subtitle>Upload a well-lit photo of yourself to reveal your perfect color palette</Subtitle>
+
+        <input
           type="file"
           accept="image/*"
-          onChange={handleFileChange}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          onChange={handleFileSelect}
+          style={{ display: 'none' }}
+          id="file-input"
         />
-        {photo && (
-          <PhotoPreview
-            src={URL.createObjectURL(photo)}
-            alt="Preview"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          />
-        )}
-        <StyledButton
+
+        <label htmlFor="file-input">
+          <UploadArea
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            {preview ? (
+              <PreviewImage src={preview} alt="Preview" />
+            ) : (
+              <p>Click or drag to upload your photo</p>
+            )}
+          </UploadArea>
+        </label>
+
+        <AnimatePresence>
+          {loading && (
+            <LoadingSpinner
+              animate={{ rotate: 360 }}
+              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+            />
+          )}
+        </AnimatePresence>
+
+        <Button
+          disabled={!selectedFile || loading}
           onClick={handleUpload}
-          disabled={loading}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.0 }}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
         >
-          {loading ? 'Analyzing...' : 'Analyze Photo'}
-        </StyledButton>
+          {loading ? 'Analyzing...' : 'Analyze My Colors'}
+        </Button>
       </UploadBox>
     </UploadContainer>
   );

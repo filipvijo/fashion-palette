@@ -1,0 +1,138 @@
+{
+  "translation": {
+    "app": {
+      "name": "Palette de Mode",
+      "tagline": "Votre assistant personnel d'analyse de couleurs"
+    },
+    "login": {
+      "welcome": "Bienvenue sur Palette de Mode",
+      "subtitle": "Découvrez votre palette de couleurs parfaite basée sur vos caractéristiques uniques",
+      "getStarted": "Commencer",
+      "language": "Langue"
+    },
+    "home": {
+      "title": "Palette de Mode",
+      "welcome": "Découvrez votre palette de couleurs parfaite basée sur vos caractéristiques uniques. Palette de Mode utilise une analyse de couleurs avancée pour vous aider à paraître au mieux et à faire des choix de mode confiants qui complètent vraiment votre coloration naturelle.",
+      "getStarted": "Commencer Maintenant",
+      "exploreSeasons": "Explorez les Quatre Saisons",
+      "findColors": "Trouvez Vos Couleurs",
+      "howItWorks": "Comment Ça Marche",
+      "uploadPhoto": "Téléchargez Votre Photo",
+      "uploadPhotoDesc": "Prenez une photo claire en lumière naturelle ou téléchargez-en une existante.",
+      "getAnalysis": "Obtenez Votre Analyse de Couleurs",
+      "getAnalysisDesc": "Notre IA analyse votre photo et détermine votre palette de couleurs saisonnière.",
+      "tryColors": "Essayez Différentes Couleurs",
+      "tryColorsDesc": "Visualisez comment différentes couleurs vous vont avec notre fonction d'essayage virtuel.",
+      "shopConfidence": "Achetez en Toute Confiance",
+      "shopConfidenceDesc": "Utilisez vos recommandations de couleurs personnalisées pour vos achats.",
+      "testimonials": "Ce Que Disent Nos Utilisateurs",
+      "features": "Découvrez Plus de Fonctionnalités",
+      "comingSoon": "Bientôt - Fonctionnalité Premium",
+      "copyright": "© 2023 Palette de Mode. Tous droits réservés.",
+      "about": "À propos",
+      "privacy": "Politique de Confidentialité",
+      "terms": "Conditions d'Utilisation",
+      "contact": "Contact"
+    },
+    "seasons": {
+      "winter": {
+        "name": "Hiver",
+        "desc": "Les couleurs d'hiver sont fraîches, audacieuses et à fort contraste, convenant souvent aux personnes aux traits frappants comme les cheveux foncés et la peau pâle ou les teints profonds avec des sous-tons frais."
+      },
+      "spring": {
+        "name": "Printemps",
+        "desc": "Les couleurs de printemps sont chaudes, fraîches et vibrantes, parfaites pour les personnes à la peau claire et chaude, aux cheveux dorés et aux yeux lumineux."
+      },
+      "summer": {
+        "name": "Été",
+        "desc": "Les couleurs d'été sont douces, fraîches et atténuées, idéales pour ceux à la peau claire et fraîche, aux cheveux blond cendré ou brun clair, et aux couleurs d'yeux douces."
+      },
+      "autumn": {
+        "name": "Automne",
+        "desc": "Les couleurs d'automne sont chaudes, riches et terreuses, complétant les personnes à la peau chaude, aux cheveux roux ou brun doré, et aux yeux profonds et chauds."
+      }
+    },
+    "features": {
+      "twelveSeasons": {
+        "name": "Analyse des 12 Saisons",
+        "desc": "Découvrez votre palette saisonnière précise avec notre analyse avancée des 12 saisons."
+      },
+      "makeup": {
+        "name": "Simulation de Maquillage",
+        "desc": "Essayez virtuellement du maquillage dans vos couleurs recommandées."
+      },
+      "wardrobe": {
+        "name": "Gestion de Garde-robe",
+        "desc": "Construisez et gérez une garde-robe avec vos meilleures couleurs."
+      },
+      "confidence": {
+        "name": "Score de Confiance des Couleurs",
+        "desc": "Obtenez un score de confiance sur la façon dont les couleurs vous conviennent."
+      }
+    },
+    "upload": {
+      "title": "Téléchargez Votre Photo",
+      "subtitle": "Prenez ou téléchargez une photo claire en lumière naturelle pour les meilleurs résultats",
+      "dragDrop": "Glissez et déposez votre photo ici",
+      "or": "ou",
+      "browse": "Parcourir les Fichiers",
+      "takePicture": "Prendre une Photo",
+      "analyzing": "Analyse de votre photo...",
+      "tips": "Conseils pour de meilleurs résultats:",
+      "tip1": "Utilisez un éclairage naturel",
+      "tip2": "Regardez directement la caméra",
+      "tip3": "Évitez le maquillage lourd",
+      "tip4": "Portez une couleur neutre (blanc, noir ou gris)",
+      "back": "Retour"
+    },
+    "results": {
+      "title": "Votre Palette Saisonnière:",
+      "noResults": "Aucun résultat d'analyse trouvé.",
+      "tryAgain": "Réessayer",
+      "recommendedPalette": "Votre Palette Recommandée",
+      "clickColor": "Cliquez sur une couleur pour voir comment elle apparaît:",
+      "overlayType": "Type de Superposition:",
+      "none": "Aucun",
+      "scarf": "Écharpe",
+      "overlayOpacity": "Opacité de Superposition:",
+      "compareColors": "Comparer Deux Couleurs",
+      "singleView": "Vue Unique",
+      "color1": "Couleur 1",
+      "color2": "Couleur 2",
+      "favoriteColors": "Vos Couleurs Préférées",
+      "extractedColors": "Couleurs Extraites de Votre Photo",
+      "shopColors": "Achetez Vos Couleurs",
+      "shareEffects": "Partager Avec Effets"
+    },
+    "shop": {
+      "title": "Achetez Votre Couleur",
+      "noColor": "Aucune couleur ou palette sélectionnée.",
+      "subtitle": "Explorez les options de vêtements dans votre couleur sélectionnée!",
+      "yourColor": "Votre Couleur:",
+      "shopNow": "Achetez Vos Couleurs",
+      "backToResults": "Retour aux Résultats",
+      "visitBallary": "Visitez Ballary"
+    },
+    "tutorial": {
+      "welcome": {
+        "title": "Bienvenue sur Palette de Mode!",
+        "text": "Ce tutoriel rapide vous montrera comment utiliser les fonctionnalités de visualisation des couleurs pour trouver vos couleurs parfaites."
+      },
+      "overlay": {
+        "title": "Essayez la Superposition d'Écharpe",
+        "text": "Cliquez sur le bouton de superposition d'écharpe pour voir comment les couleurs apparaîtraient comme une écharpe autour de votre cou."
+      },
+      "compare": {
+        "title": "Comparez les Couleurs",
+        "text": "Utilisez la vue écran partagé pour comparer deux couleurs différentes côte à côte et voir laquelle vous convient le mieux."
+      },
+      "favorites": {
+        "title": "Enregistrez Vos Favoris",
+        "text": "Cliquez sur l'icône étoile pour enregistrer les couleurs que vous aimez dans votre collection de favoris pour référence future."
+      },
+      "skip": "Passer le Tutoriel",
+      "next": "Suivant",
+      "finish": "Terminer"
+    }
+  }
+}

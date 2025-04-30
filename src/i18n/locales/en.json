@@ -1,0 +1,138 @@
+{
+  "translation": {
+    "app": {
+      "name": "Fashion Palette",
+      "tagline": "Your personal color analysis assistant"
+    },
+    "login": {
+      "welcome": "Welcome to Fashion Palette",
+      "subtitle": "Discover your perfect color palette based on your unique features",
+      "getStarted": "Get Started",
+      "language": "Language"
+    },
+    "home": {
+      "title": "Fashion Palette",
+      "welcome": "Discover your perfect color palette based on your unique features. Fashion Palette uses advanced color analysis to help you look your best and make confident fashion choices that truly complement your natural coloring.",
+      "getStarted": "Get Started Now",
+      "exploreSeasons": "Explore the Four Seasons",
+      "findColors": "Find Your Colors",
+      "howItWorks": "How It Works",
+      "uploadPhoto": "Upload Your Photo",
+      "uploadPhotoDesc": "Take a clear photo in natural lighting or upload an existing one.",
+      "getAnalysis": "Get Your Color Analysis",
+      "getAnalysisDesc": "Our AI analyzes your photo and determines your seasonal color palette.",
+      "tryColors": "Try Different Colors",
+      "tryColorsDesc": "Visualize how different colors look on you with our virtual try-on feature.",
+      "shopConfidence": "Shop With Confidence",
+      "shopConfidenceDesc": "Use your personalized color recommendations for shopping.",
+      "testimonials": "What Our Users Say",
+      "features": "Discover More Features",
+      "comingSoon": "Coming Soon - Premium Feature",
+      "copyright": "© 2023 Fashion Palette. All rights reserved.",
+      "about": "About",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "contact": "Contact"
+    },
+    "seasons": {
+      "winter": {
+        "name": "Winter",
+        "desc": "Winter colors are cool, bold, and high-contrast, often suiting people with striking features like dark hair and pale skin or deep skin tones with cool undertones."
+      },
+      "spring": {
+        "name": "Spring",
+        "desc": "Spring colors are warm, fresh, and vibrant, perfect for people with light, warm-toned skin, golden hair, and bright eyes."
+      },
+      "summer": {
+        "name": "Summer",
+        "desc": "Summer colors are soft, cool, and muted, ideal for those with light, cool-toned skin, ash-blonde or light brown hair, and soft eye colors."
+      },
+      "autumn": {
+        "name": "Autumn",
+        "desc": "Autumn colors are warm, rich, and earthy, complementing people with warm-toned skin, red or golden-brown hair, and deep, warm eyes."
+      }
+    },
+    "features": {
+      "twelveSeasons": {
+        "name": "12 Seasons Analysis",
+        "desc": "Discover your precise seasonal palette with our advanced 12-season analysis."
+      },
+      "makeup": {
+        "name": "Makeup Simulation",
+        "desc": "Try on makeup in your recommended colors virtually."
+      },
+      "wardrobe": {
+        "name": "Wardrobe Management",
+        "desc": "Build and manage a wardrobe with your best colors."
+      },
+      "confidence": {
+        "name": "Color Confidence Score",
+        "desc": "Get a confidence score for how well colors suit you."
+      }
+    },
+    "upload": {
+      "title": "Upload Your Photo",
+      "subtitle": "Take or upload a clear photo in natural lighting for the best results",
+      "dragDrop": "Drag & drop your photo here",
+      "or": "or",
+      "browse": "Browse Files",
+      "takePicture": "Take a Picture",
+      "analyzing": "Analyzing your photo...",
+      "tips": "Tips for best results:",
+      "tip1": "Use natural lighting",
+      "tip2": "Face the camera directly",
+      "tip3": "Avoid heavy makeup",
+      "tip4": "Wear a neutral color (white, black, or gray)",
+      "back": "Back"
+    },
+    "results": {
+      "title": "Your Seasonal Palette:",
+      "noResults": "No analysis results found.",
+      "tryAgain": "Try Again",
+      "recommendedPalette": "Your Recommended Palette",
+      "clickColor": "Click on a color to see how it looks:",
+      "overlayType": "Overlay Type:",
+      "none": "None",
+      "scarf": "Scarf",
+      "overlayOpacity": "Overlay Opacity:",
+      "compareColors": "Compare Two Colors",
+      "singleView": "Single View",
+      "color1": "Color 1",
+      "color2": "Color 2",
+      "favoriteColors": "Your Favorite Colors",
+      "extractedColors": "Colors Extracted From Your Photo",
+      "shopColors": "Shop Your Colors",
+      "shareEffects": "Share With Effects"
+    },
+    "shop": {
+      "title": "Shop Your Color",
+      "noColor": "No color or palette selected.",
+      "subtitle": "Explore clothing options in your selected color!",
+      "yourColor": "Your Color:",
+      "shopNow": "Shop Your Colors",
+      "backToResults": "Back to Results",
+      "visitBallary": "Visit Ballary"
+    },
+    "tutorial": {
+      "welcome": {
+        "title": "Welcome to Fashion Palette!",
+        "text": "This quick tutorial will show you how to use the color visualization features to find your perfect colors."
+      },
+      "overlay": {
+        "title": "Try Scarf Overlay",
+        "text": "Click on the scarf overlay button to see how colors would look as a scarf around your neck."
+      },
+      "compare": {
+        "title": "Compare Colors",
+        "text": "Use the split-screen view to compare two different colors side by side and see which one suits you better."
+      },
+      "favorites": {
+        "title": "Save Your Favorites",
+        "text": "Click the star icon to save colors you love to your favorites collection for future reference."
+      },
+      "skip": "Skip Tutorial",
+      "next": "Next",
+      "finish": "Finish"
+    }
+  }
+}

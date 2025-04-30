@@ -1,0 +1,138 @@
+{
+  "translation": {
+    "app": {
+      "name": "Modna Paleta",
+      "tagline": "Vaš lični asistent za analizu boja"
+    },
+    "login": {
+      "welcome": "Dobrodošli u Modnu Paletu",
+      "subtitle": "Otkrijte svoju savršenu paletu boja na osnovu vaših jedinstvenih karakteristika",
+      "getStarted": "Započnite",
+      "language": "Jezik"
+    },
+    "home": {
+      "title": "Modna Paleta",
+      "welcome": "Otkrijte svoju savršenu paletu boja na osnovu vaših jedinstvenih karakteristika. Modna Paleta koristi naprednu analizu boja da vam pomogne da izgledate najbolje i donosite sigurne modne izbore koji zaista dopunjuju vaše prirodne boje.",
+      "getStarted": "Započnite Odmah",
+      "exploreSeasons": "Istražite Četiri Godišnja Doba",
+      "findColors": "Pronađite Svoje Boje",
+      "howItWorks": "Kako Funkcioniše",
+      "uploadPhoto": "Otpremite Svoju Fotografiju",
+      "uploadPhotoDesc": "Napravite jasnu fotografiju pri prirodnom osvetljenju ili otpremite postojeću.",
+      "getAnalysis": "Dobijte Analizu Boja",
+      "getAnalysisDesc": "Naša veštačka inteligencija analizira vašu fotografiju i određuje vašu sezonsku paletu boja.",
+      "tryColors": "Isprobajte Različite Boje",
+      "tryColorsDesc": "Vizualizujte kako različite boje izgledaju na vama pomoću naše virtuelne funkcije isprobavanja.",
+      "shopConfidence": "Kupujte Sa Samopouzdanjem",
+      "shopConfidenceDesc": "Koristite personalizovane preporuke boja za kupovinu.",
+      "testimonials": "Šta Kažu Naši Korisnici",
+      "features": "Otkrijte Više Funkcija",
+      "comingSoon": "Uskoro - Premium Funkcija",
+      "copyright": "© 2023 Modna Paleta. Sva prava zadržana.",
+      "about": "O nama",
+      "privacy": "Politika privatnosti",
+      "terms": "Uslovi korišćenja",
+      "contact": "Kontakt"
+    },
+    "seasons": {
+      "winter": {
+        "name": "Zima",
+        "desc": "Zimske boje su hladne, smele i visokokontrastne, često odgovaraju ljudima sa upečatljivim karakteristikama poput tamne kose i blede kože ili dubokih tonova kože sa hladnim podtonovima."
+      },
+      "spring": {
+        "name": "Proleće",
+        "desc": "Prolećne boje su tople, sveže i živahne, savršene za ljude sa svetlom, toplom kožom, zlatnom kosom i svetlim očima."
+      },
+      "summer": {
+        "name": "Leto",
+        "desc": "Letnje boje su meke, hladne i prigušene, idealne za one sa svetlom, hladnom kožom, pepeljasto-plavom ili svetlo smeđom kosom i mekim bojama očiju."
+      },
+      "autumn": {
+        "name": "Jesen",
+        "desc": "Jesenje boje su tople, bogate i zemljane, dopunjuju ljude sa toplom kožom, crvenom ili zlatno-smeđom kosom i dubokim, toplim očima."
+      }
+    },
+    "features": {
+      "twelveSeasons": {
+        "name": "Analiza 12 Godišnjih Doba",
+        "desc": "Otkrijte svoju preciznu sezonsku paletu pomoću naše napredne analize 12 godišnjih doba."
+      },
+      "makeup": {
+        "name": "Simulacija Šminke",
+        "desc": "Virtuelno isprobajte šminku u preporučenim bojama."
+      },
+      "wardrobe": {
+        "name": "Upravljanje Garderobom",
+        "desc": "Izgradite i upravljajte garderobom sa vašim najboljim bojama."
+      },
+      "confidence": {
+        "name": "Ocena Samopouzdanja Boja",
+        "desc": "Dobijte ocenu samopouzdanja o tome koliko vam boje odgovaraju."
+      }
+    },
+    "upload": {
+      "title": "Otpremite Svoju Fotografiju",
+      "subtitle": "Napravite ili otpremite jasnu fotografiju pri prirodnom osvetljenju za najbolje rezultate",
+      "dragDrop": "Prevucite i otpustite svoju fotografiju ovde",
+      "or": "ili",
+      "browse": "Pregledajte Datoteke",
+      "takePicture": "Napravite Fotografiju",
+      "analyzing": "Analiziranje vaše fotografije...",
+      "tips": "Saveti za najbolje rezultate:",
+      "tip1": "Koristite prirodno osvetljenje",
+      "tip2": "Gledajte direktno u kameru",
+      "tip3": "Izbegavajte tešku šminku",
+      "tip4": "Nosite neutralnu boju (belu, crnu ili sivu)",
+      "back": "Nazad"
+    },
+    "results": {
+      "title": "Vaša Sezonska Paleta:",
+      "noResults": "Nije pronađen nijedan rezultat analize.",
+      "tryAgain": "Pokušajte Ponovo",
+      "recommendedPalette": "Vaša Preporučena Paleta",
+      "clickColor": "Kliknite na boju da vidite kako izgleda:",
+      "overlayType": "Tip Prekrivanja:",
+      "none": "Nijedno",
+      "scarf": "Šal",
+      "overlayOpacity": "Providnost Prekrivanja:",
+      "compareColors": "Uporedite Dve Boje",
+      "singleView": "Pojedinačni Prikaz",
+      "color1": "Boja 1",
+      "color2": "Boja 2",
+      "favoriteColors": "Vaše Omiljene Boje",
+      "extractedColors": "Boje Izvučene Iz Vaše Fotografije",
+      "shopColors": "Kupujte Vaše Boje",
+      "shareEffects": "Podelite Sa Efektima"
+    },
+    "shop": {
+      "title": "Kupujte Vašu Boju",
+      "noColor": "Nije izabrana boja ili paleta.",
+      "subtitle": "Istražite opcije odeće u vašoj izabranoj boji!",
+      "yourColor": "Vaša Boja:",
+      "shopNow": "Kupujte Vaše Boje",
+      "backToResults": "Nazad na Rezultate",
+      "visitBallary": "Posetite Ballary"
+    },
+    "tutorial": {
+      "welcome": {
+        "title": "Dobrodošli u Modnu Paletu!",
+        "text": "Ovaj brzi tutorijal će vam pokazati kako da koristite funkcije vizualizacije boja da pronađete svoje savršene boje."
+      },
+      "overlay": {
+        "title": "Isprobajte Prekrivanje Šalom",
+        "text": "Kliknite na dugme za prekrivanje šalom da vidite kako bi boje izgledale kao šal oko vašeg vrata."
+      },
+      "compare": {
+        "title": "Uporedite Boje",
+        "text": "Koristite prikaz podeljenog ekrana da uporedite dve različite boje jednu pored druge i vidite koja vam bolje odgovara."
+      },
+      "favorites": {
+        "title": "Sačuvajte Svoje Omiljene",
+        "text": "Kliknite na ikonu zvezde da sačuvate boje koje volite u vašu kolekciju omiljenih za buduću referencu."
+      },
+      "skip": "Preskoči Tutorijal",
+      "next": "Sledeće",
+      "finish": "Završi"
+    }
+  }
+}

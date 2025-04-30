@@ -2,6 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client'; // Import createRoot
 import App from './App';
 import './index.css';
+import './i18n/i18n'; // Import i18n configuration
 
 // Get the root element from the DOM
 const container = document.getElementById('root');
